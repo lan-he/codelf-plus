@@ -3,56 +3,55 @@ import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
 const ua = window.navigator.userAgent
-let phone = false
-if (ua.indexOf('iPhone') >= 0) phone = true
-if (ua.indexOf('Android') >= 0) phone = true
-if (ua.indexOf('iPad') >= 0) phone = true
-let path = phone ? 'phone' : ''
+let path = 'web'
+if (ua.indexOf('iPhone') >= 0) path = 'phone'
+if (ua.indexOf('Android') >= 0) path = 'phone'
+if (ua.indexOf('iPad') >= 0) path = 'phone'
 const routes = [
     {
         path: '/',
         name: '/',
-        redirect: '/Home',
+        redirect: '/home',
     },
     {
-        path: '/Home',
-        name: 'Home',
-        component: () => import(`@/views/home/${path}home.vue`),
+        path: '/home',
+        name: 'home',
+        component: () => import(`@/views/${path}/home.vue`),
     },
     {
-        path: '/Offerwall',
-        name: 'Offerwall',
-        component: () => import(`@/views/offerwall/${path}offerwall.vue`),
+        path: '/offerwall',
+        name: 'offerwall',
+        component: () => import(`@/views/${path}/offerwall/offerwall.vue`),
     },
     {
-        path: '/Games',
-        name: 'Games',
-        component: () => import(`@/views/games/${path}games.vue`),
+        path: '/games',
+        name: 'games',
+        component: () => import(`@/views/${path}/games/games.vue`),
     },
     {
-        path: '/News',
-        name: 'News',
-        component: () => import(`@/views/news/${path}news.vue`),
+        path: '/news',
+        name: 'news',
+        component: () => import(`@/views/${path}/news/news.vue`),
     },
     {
-        path: '/Games/detail',
-        name: 'Gamedetail',
-        component: () => import(`@/views/games/${path}gamedetail.vue`),
+        path: '/games/detail',
+        name: 'gamedetail',
+        component: () => import(`@/views/${path}/games/gamedetail.vue`),
     },
     {
-        path: '/Games/detailtwo',
-        name: 'Gamedetailtwo',
-        component: () => import(`@/views/games/${path}gamedetailtwo.vue`),
+        path: '/games/detailtwo',
+        name: 'gamedetailtwo',
+        component: () => import(`@/views/${path}/games/gamedetailtwo.vue`),
     },
     {
-        path: '/MarkeetPlace',
-        name: 'markeetplace',
-        component: () => import(`@/views/markeetplace/${path}markeetplace.vue`),
+        path: '/markeet-place',
+        name: 'markeet-place',
+        component: () => import(`@/views/${path}/markeetplace/markeetplace.vue`),
     },
     {
-        path: '/About',
+        path: '/about',
         name: 'about',
-        component: () => import(`@/views/about/${path}about.vue`),
+        component: () => import(`@/views/${path}/about/about.vue`),
     },
 ]
 

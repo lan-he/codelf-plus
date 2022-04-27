@@ -16,24 +16,24 @@
       <ul>
         <li class="no123">
           <div>
-            <img src="../../assets/images/home/NO1.png" alt="" />
-            <img src="../../assets/images/home/picture01.png" alt="" />
+            <img src="@/assets/images/home/NO1.png" alt="" />
+            <img src="@/assets/images/home/picture01.png" alt="" />
             <div>
               <p>Paul Geroge</p>
               <p>$1,008,699</p>
             </div>
           </div>
           <div>
-            <img src="../../assets/images/home/NO2.png" alt="" />
-            <img src="../../assets/images/home/picture02.png" alt="" />
+            <img src="@/assets/images/home/NO2.png" alt="" />
+            <img src="@/assets/images/home/picture02.png" alt="" />
             <div>
               <p>Paul Geroge</p>
               <p>$1,008,699</p>
             </div>
           </div>
           <div>
-            <img src="../../assets/images/home/NO3.png" alt="" />
-            <img src="../../assets/images/home/picture03.png" alt="" />
+            <img src="@/assets/images/home/NO3.png" alt="" />
+            <img src="@/assets/images/home/picture03.png" alt="" />
             <div>
               <p>Paul Geroge</p>
               <p>$1,008,699</p>

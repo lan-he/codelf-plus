@@ -4,19 +4,19 @@
             <div class="footer">
                 <ul>
                     <li>
-                        <img src="../../assets/images/home/footerlogo.png" alt="" />
+                        <img src="@/assets/images/home/footerlogo.png" alt="" />
                         <p>&copy; 2022 Metabridge. All right reserved</p>
                     </li>
                     <li>
                         <div class="left">
                             <div class="img">
-                                <img src="../../assets/images/home/bird.png" alt="" />
+                                <img src="@/assets/images/home/bird.png" alt="" />
                             </div>
                             <div class="img">
-                                <img src="../../assets/images/home/facebook.png" alt="" />
+                                <img src="@/assets/images/home/facebook.png" alt="" />
                             </div>
                             <div class="img">
-                                <img src="../../assets/images/home/INS.png" alt="" />
+                                <img src="@/assets/images/home/INS.png" alt="" />
                             </div>
                         </div>
                         <div class="selectbtn">
@@ -28,7 +28,7 @@
                       :value="item.value">
                     </el-option>
                     </el-select> -->
-                            <img src="../../assets/images/home/usa.png" alt="" />
+                            <img src="@/assets/images/home/usa.png" alt="" />
                             <span>USA</span>
                             <i class="el-icon-arrow-up"></i>
                         </div>
