@@ -8,6 +8,7 @@ if (ua.indexOf('iPhone') >= 0) path = 'phone'
 if (ua.indexOf('Android') >= 0) path = 'phone'
 if (ua.indexOf('iPad') >= 0) path = 'phone'
 const routes = [
+    // { path: '/:pathMatch(.*)*', name: 'notfound', component: () => import(`@/views/${path}/home.vue`) },
     {
         path: '/',
         name: '/',

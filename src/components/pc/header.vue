@@ -6,35 +6,42 @@
             </div>
             <ul>
                 <li
+                    v-for="(item, index) in navlistShow"
                     :class="navlistcurrent == index ? 'active' : ''"
-                    v-for="(item, index) in navlist"
                     :key="index"
-                    @click="changenavlistcurrent(index, item)"
+                    @click="changenavlistcurrent(index)"
                 >
                     <span class="tabindex">{{ item }}</span>
                     <div></div>
                 </li>
             </ul>
-            <div class="login">
+            <div class="login" @click="loginBox = true">
                 <img src="@/assets/images/home/login.png" alt="" />
             </div>
         </nav>
+        <LoginPop v-if="loginBox" @closeLogin="loginBox = fales" />
     </div>
 </template>
 
 <script>
+import LoginPop from '@/components/pc/login-pop.vue'
 export default {
     name: 'main-header',
     data() {
         return {
             navlistcurrent: 0,
-            navlist: ['Home', 'Games', 'MarkeetPlace', 'News', 'Offerwall', 'About'],
+            navlistShow: ['Home', 'Games', 'MarkeetPlace', 'News', 'Offerwall', 'About'],
+            navlist: ['home', 'games', 'markeet-place', 'news', 'offerwall', 'about'],
+            loginBox: false,
         }
     },
+    components: {
+        LoginPop,
+    },
     methods: {
-        changenavlistcurrent(index, item) {
+        changenavlistcurrent(index) {
             this.$store.state.navlistcurrent = index
-            this.$router.push(`/${item}`)
+            this.$router.push(`/${this.navlist[index]}`)
         },
     },
     mounted() {
