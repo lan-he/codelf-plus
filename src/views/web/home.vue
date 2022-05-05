@@ -2,17 +2,24 @@
     <div class="home">
         <Header></Header>
         <div class="banner">
-            <div class="block">
-                <el-carousel trigger="click" height="540px">
+            <el-carousel indicator-position="outside">
+                <el-carousel-item v-for="(item, index) in bannerlist" :key="index">
+                    <img class="bannerimg" :src="item" alt="" />
+                    <div v-if="index == 0" class="btn">
+                        <button>More</button>
+                        <button>Download</button>
+                    </div>
+                </el-carousel-item>
+            </el-carousel>
+            <!-- <el-carousel trigger="click" height="540px">
                     <el-carousel-item v-for="(item, index) in bannerlist" :key="index">
-                        <img class="bannerimg" :src="item" alt="" />
-                        <div v-if="index == 0" class="btn">
-                            <button>More</button>
-                            <button>Download</button>
-                        </div>
-                    </el-carousel-item>
-                </el-carousel>
-            </div>
+                    <img class="bannerimg" :src="item" alt="" />
+                    <div v-if="index == 0" class="btn">
+                        <button>More</button>
+                        <button>Download</button>
+                    </div>
+                </el-carousel-item>
+            </el-carousel> -->
         </div>
         <main>
             <div class="content">
@@ -274,64 +281,54 @@ export default {
     padding: 90px 0 0;
     width: 100%;
     .banner {
-        width: 100%;
-        margin: 0 auto;
-        position: relative;
-        color: #fff;
-        /deep/.el-carousel__arrow--left {
-            left: 200px;
-            top: 45%;
-            font-size: 50px;
-        }
-        /deep/.el-carousel__arrow--right {
-            top: 45%;
-            right: 200px;
-            font-size: 50px;
-        }
-        /deep/.el-carousel__indicator--horizontal {
-            .el-carousel__button {
-                width: 10px;
-                height: 10px;
-                border-radius: 10px;
-                background: #dfe0e1;
-                opacity: 1;
-            }
-        }
-        /deep/li.is-active {
-            .el-carousel__button {
-                width: 10px;
-                height: 10px;
-                border-radius: 10px;
-                background: RGB(52, 224, 218);
-            }
-        }
-        .bannerimg {
+        height: 405px;
+        background-color: #03152a;
+        /deep/ .el-carousel {
+            width: 100%;
             height: 100%;
-            //   width: 100%;
+            position: relative;
+        }
+        /deep/ .el-carousel__container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        /deep/ .el-carousel__arrow--left {
+            left: 253px;
+        }
+        /deep/ .el-carousel__arrow--right {
+            right: 253px;
+        }
+        /deep/ .el-carousel__arrow {
+            width: 50px;
+            height: 50px;
+            background: rgba(1, 1, 1, 0.6);
+            i {
+                font-size: 28px;
+                color: #fff;
+                font-weight: 600;
+            }
+        }
+        // 指示器
+        /deep/ .el-carousel__indicators--outside {
+            position: absolute;
+            .el-carousel__button {
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+            }
+            .is-active {
+                .el-carousel__button {
+                    background-color: #34e0da;
+                }
+            }
+        }
+        img {
+            height: 100%;
             position: absolute;
             top: 0;
             left: 50%;
             transform: translateX(-50%);
-        }
-        .btn {
-            position: absolute;
-            bottom: 87px;
-            left: 450px;
-            button {
-                width: 170px;
-                height: 50px;
-                margin-right: 60px;
-                border-radius: 10px;
-                font-size: 16px;
-                color: #fff;
-                background: rgba(0, 0, 0, 0.7);
-                border: 2px solid #fff;
-                cursor: pointer;
-            }
-            button:nth-child(2) {
-                background: RGB(38, 138, 239);
-                border: 2px solid RGB(38, 138, 239);
-            }
         }
     }
     main {
