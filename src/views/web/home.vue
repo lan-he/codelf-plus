@@ -42,7 +42,7 @@
                         </p>
                     </div>
                     <div class="block">
-                        <el-carousel height="370px">
+                        <el-carousel height="370px" :autoplay="false">
                             <el-carousel-item v-for="(item, index) in gamefourlist" :key="index">
                                 <ul class="gamefourlist">
                                     <li v-for="(imgsrc, indextwo) in item.imgsrc" :key="indextwo">
@@ -336,7 +336,7 @@ export default {
         padding-bottom: 250px;
         background-color: #171717;
         .content {
-            width: 1160px;
+            width: 1000px;
             height: 100%;
             overflow: hidden;
             margin: 0 auto;
@@ -405,13 +405,14 @@ export default {
                     display: flex;
                     justify-content: space-between;
                     li {
-                        // position: relative;
+                        width: 23%;
                         height: 320px;
                         overflow: hidden;
                         .article {
                             width: 100%;
                             background: rgba(0, 0, 0, 0.7);
                             transition: 0.3s;
+                            padding: 5px 0;
                             p {
                                 color: #fff;
                                 padding: 5px 12px;
@@ -425,7 +426,7 @@ export default {
                             }
                         }
                         &:hover .article {
-                            transform: translateY(-60px);
+                            transform: translateY(-70px);
                         }
                     }
                 }
@@ -466,7 +467,7 @@ export default {
                     justify-content: space-between;
                     flex-wrap: wrap;
                     li {
-                        width: 200px;
+                        width: 19%;
                         height: 300px;
                         background: #323232;
                         border-radius: 10px;
@@ -490,15 +491,17 @@ export default {
                             }
                         }
                         .content {
+                            width: 100%;
+                            height: 78px;
                             box-sizing: border-box;
-                            padding: 3px 20px;
-                            line-height: 27px;
+                            padding: 12px 16px;
                             color: #9b9b9b;
+                            font-size: 14px;
                             .money {
                                 i {
                                     display: inline-block;
-                                    width: 15px;
-                                    height: 15px;
+                                    width: 10px;
+                                    height: 10px;
                                     background-color: #e7ad32;
                                     border-radius: 50%;
                                     margin-right: 5px;
