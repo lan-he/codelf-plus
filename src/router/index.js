@@ -4,9 +4,9 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 const ua = window.navigator.userAgent
 let path = 'web'
-if (ua.indexOf('iPhone') >= 0) path = 'phone'
-if (ua.indexOf('Android') >= 0) path = 'phone'
-if (ua.indexOf('iPad') >= 0) path = 'phone'
+if (ua.indexOf('iPhone') >= 0) path = 'mobile'
+if (ua.indexOf('Android') >= 0) path = 'mobile'
+if (ua.indexOf('iPad') >= 0) path = 'mobile'
 const routes = [
     // { path: '/:pathMatch(.*)*', name: 'notfound', component: () => import(`@/views/${path}/home.vue`) },
     {
