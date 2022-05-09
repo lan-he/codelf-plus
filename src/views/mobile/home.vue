@@ -1,10 +1,8 @@
 <template>
     <div class="home">
-        <PhoneHeader />
+        <MobileHeader />
         <div class="home-box">
-            <div class="swiper">
-                <img src="@/assets/images/home/mobile-swiper.png" alt="" />
-            </div>
+            <MobileBanner />
             <div class="games-show">
                 <div class="games-show-item">
                     <img src="@/assets/images/home/game01.png" alt="" />
@@ -55,31 +53,7 @@
                     </div>
                 </div>
             </div>
-            <div class="games">
-                <div class="games-top">
-                    <div class="games-title">Games</div>
-                    <div class="more">more</div>
-                </div>
-                <div class="games-list">
-                    <div class="games-list-box">
-                        <div class="games-item">
-                            <img src="@/assets/images/home/GFY03.png" alt="" />
-                        </div>
-                        <div class="games-item">
-                            <img src="@/assets/images/home/GFY03.png" alt="" />
-                        </div>
-                        <div class="games-item">
-                            <img src="@/assets/images/home/GFY03.png" alt="" />
-                        </div>
-                        <div class="games-item">
-                            <img src="@/assets/images/home/GFY03.png" alt="" />
-                        </div>
-                        <div class="games-item">
-                            <img src="@/assets/images/home/GFY03.png" alt="" />
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <MobileGames />
             <div class="market">
                 <div class="games-top">
                     <div class="games-title">Market</div>
@@ -164,13 +138,15 @@
 </template>
 
 <script>
-import PhoneHeader from '@/components/mobile/mobile-header.vue'
+import MobileHeader from '@/components/mobile/mobile-header.vue'
+import MobileBanner from '@/components/mobile/mobile-banner.vue'
+import MobileGames from '@/components/mobile/mobile-games.vue'
 export default {
     name: 'home',
     data() {
         return {}
     },
-    components: { PhoneHeader },
+    components: { MobileHeader, MobileBanner, MobileGames },
     mounted() {},
 }
 </script>
@@ -194,6 +170,7 @@ export default {
         .games-show {
             display: flex;
             justify-content: space-between;
+            margin-top: 10px;
             .games-show-item {
                 width: 334px;
                 height: 218px;
@@ -268,31 +245,6 @@ export default {
                     }
                     .marny {
                         margin-left: auto;
-                    }
-                }
-            }
-        }
-        .games {
-            margin-top: 50px;
-            .games-list {
-                overflow-x: scroll;
-                overflow-y: hidden;
-                .games-list-box {
-                    display: flex;
-                    width: 1500px;
-                    height: 320px;
-                    margin-top: 34px;
-
-                    .games-item {
-                        width: 240px;
-                        height: 320px;
-                        margin-right: 20px;
-                        border-radius: 10px;
-                        overflow: hidden;
-                        img {
-                            width: 100%;
-                            height: 100%;
-                        }
                     }
                 }
             }

@@ -40,7 +40,7 @@ export default {
     },
     methods: {
         changenavlistcurrent(index) {
-            this.$store.state.navlistcurrent = index
+            this.navlistcurrent = index
             this.$router.push(`/${this.navlist[index]}`)
         },
     },

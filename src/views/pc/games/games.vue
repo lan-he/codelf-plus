@@ -120,7 +120,7 @@ export default {
     },
     methods: {
         gogamedetail() {
-            this.$router.push('/Games/detail')
+            this.$router.push('/games-detail')
         },
     },
     components: {

@@ -1,14 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-
 Vue.use(VueRouter)
-const ua = window.navigator.userAgent
-let path = 'web'
-if (ua.indexOf('iPhone') >= 0) path = 'mobile'
-if (ua.indexOf('Android') >= 0) path = 'mobile'
-if (ua.indexOf('iPad') >= 0) path = 'mobile'
+import mobile from './mobile.js'
+
 const routes = [
-    // { path: '/:pathMatch(.*)*', name: 'notfound', component: () => import(`@/views/${path}/home.vue`) },
     {
         path: '/',
         name: '/',
@@ -17,48 +12,93 @@ const routes = [
     {
         path: '/home',
         name: 'home',
-        component: () => import(`@/views/${path}/home.vue`),
+        component: () => import(`@/views/pc/home.vue`),
+        meta: {
+            equipment: 'pc',
+        },
     },
     {
         path: '/offerwall',
         name: 'offerwall',
-        component: () => import(`@/views/${path}/offerwall/offerwall.vue`),
+        component: () => import(`@/views/pc/offerwall/offerwall.vue`),
+        meta: {
+            equipment: 'pc',
+        },
     },
     {
         path: '/games',
         name: 'games',
-        component: () => import(`@/views/${path}/games/games.vue`),
+        component: () => import(`@/views/pc/games/games.vue`),
+        meta: {
+            equipment: 'pc',
+        },
     },
     {
         path: '/news',
         name: 'news',
-        component: () => import(`@/views/${path}/news/news.vue`),
+        component: () => import(`@/views/pc/news/news.vue`),
+        meta: {
+            equipment: 'pc',
+        },
     },
     {
-        path: '/games/detail',
+        path: '/games-detail',
         name: 'gamedetail',
-        component: () => import(`@/views/${path}/games/gamedetail.vue`),
+        component: () => import(`@/views/pc/games/gamedetail.vue`),
+        meta: {
+            equipment: 'pc',
+        },
     },
     {
-        path: '/games/detailtwo',
+        path: '/games-detailtwo',
         name: 'gamedetailtwo',
-        component: () => import(`@/views/${path}/games/gamedetailtwo.vue`),
+        component: () => import(`@/views/pc/games/gamedetailtwo.vue`),
+        meta: {
+            equipment: 'pc',
+        },
     },
     {
         path: '/markeet-place',
         name: 'markeet-place',
-        component: () => import(`@/views/${path}/markeetplace/markeetplace.vue`),
+        component: () => import(`@/views/pc/markeetplace/markeetplace.vue`),
+        meta: {
+            equipment: 'pc',
+        },
     },
     {
         path: '/about',
         name: 'about',
-        component: () => import(`@/views/${path}/about/about.vue`),
+        component: () => import(`@/views/pc/about/about.vue`),
+        meta: {
+            equipment: 'pc',
+        },
     },
+    ...mobile,
 ]
 
 const router = new VueRouter({
     mode: 'hash',
     routes,
+})
+router.beforeEach((to, from, next) => {
+    console.log(to)
+    const ua = window.navigator.userAgent
+    let toEquipment = 'pc'
+    if (ua.indexOf('iPhone') >= 0 || ua.indexOf('Android') >= 0 || ua.indexOf('iPad') >= 0) {
+        toEquipment = 'mobile'
+    } else {
+        toEquipment = 'pc'
+    }
+    if (toEquipment === 'mobile' && to.meta.equipment === 'pc' && from) {
+        next(`${to.path}-m`)
+        setTimeout('console.clear()', 1)
+    }
+    if (toEquipment === 'pc' && to.meta.equipment === 'mobile') {
+        next(to.path.slice(0, -2))
+        setTimeout('console.clear()', 1)
+    }
+    next()
+    return false
 })
 
 export default router

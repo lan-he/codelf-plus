@@ -1,9 +1,21 @@
 <template>
     <div class="phone-header">
-        <i class="iconfont icon-liebiao2"></i>
+        <i class="iconfont icon-liebiao2" @click="headerMenu = true"></i>
         <span>mate</span>
         <div class="userinfo">
             <i class="iconfont icon-jurassic_user"></i>
+        </div>
+        <div class="phone-header-menu" v-if="headerMenu">
+            <i class="iconfont icon-close close"></i>
+            <div
+                class="icon-item"
+                v-for="(item, index) in navlistShow"
+                :key="index"
+                @click="changenavlistcurrent(index)"
+            >
+                <i class="iconfont icon-game"></i>
+                <span>{{ item }}</span>
+            </div>
         </div>
     </div>
 </template>
@@ -12,7 +24,17 @@
 export default {
     name: 'phone-header',
     data() {
-        return {}
+        return {
+            headerMenu: false,
+            navlistShow: ['Home', 'Games', 'MarkeetPlace', 'News', 'Offerwall', 'About'],
+            navlist: ['home-m', 'games-m', 'markeet-place-m', 'news-m', 'offerwall-m', 'about-m'],
+        }
+    },
+    methods: {
+        changenavlistcurrent(index) {
+            this.headerMenu = false
+            this.$router.push(`/${this.navlist[index]}`)
+        },
     },
 }
 </script>
@@ -45,6 +67,37 @@ export default {
         justify-content: center;
         i {
             font-size: 30px;
+        }
+    }
+    .phone-header-menu {
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.9);
+        z-index: 11;
+        padding: 80px 50px;
+        box-sizing: border-box;
+        .close {
+            position: absolute;
+            top: 20px;
+            left: 28px;
+        }
+        .icon-item {
+            display: flex;
+            align-items: center;
+            border-top: 1px solid rgb(97, 97, 97);
+            height: 100px;
+            i {
+                font-size: 42px;
+                margin: 0 20px;
+                color: rgb(184, 184, 184);
+            }
+            span {
+                font-size: 34px;
+                color: #fff;
+            }
         }
     }
 }
