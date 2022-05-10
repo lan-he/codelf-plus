@@ -13,46 +13,7 @@
                     <div class="games-show-item-title">Matchstick Men</div>
                 </div>
             </div>
-            <div class="ranking-list">
-                <div class="ranking-list-top">
-                    <div class="ranking-type">Week</div>
-                    <div class="ranking-type">Month</div>
-                    <div class="ranking-type">Total</div>
-                    <div class="more">more</div>
-                </div>
-                <div class="ranking-list-content">
-                    <div class="ranking-list-content-item">
-                        <p>1</p>
-                        <img class="head-portrait" src="@/assets/images/home/picture01.png" alt="" />
-                        <span>Paul Geroge</span>
-                        <div class="marny">$1,008,699</div>
-                    </div>
-                    <div class="ranking-list-content-item">
-                        <p>1</p>
-                        <img class="head-portrait" src="@/assets/images/home/picture01.png" alt="" />
-                        <span>Paul Geroge</span>
-                        <div class="marny">$1,008,699</div>
-                    </div>
-                    <div class="ranking-list-content-item">
-                        <p>1</p>
-                        <img class="head-portrait" src="@/assets/images/home/picture01.png" alt="" />
-                        <span>Paul Geroge</span>
-                        <div class="marny">$1,008,699</div>
-                    </div>
-                    <div class="ranking-list-content-item">
-                        <p>1</p>
-                        <img class="head-portrait" src="@/assets/images/home/picture01.png" alt="" />
-                        <span>Paul Geroge</span>
-                        <div class="marny">$1,008,699</div>
-                    </div>
-                    <div class="ranking-list-content-item">
-                        <p>1</p>
-                        <img class="head-portrait" src="@/assets/images/home/picture01.png" alt="" />
-                        <span>Paul Geroge</span>
-                        <div class="marny">$1,008,699</div>
-                    </div>
-                </div>
-            </div>
+            <MobileRankingList />
             <MobileGames />
             <div class="market">
                 <div class="games-top">
@@ -60,60 +21,7 @@
                     <div class="more">more</div>
                 </div>
                 <div class="market-box">
-                    <div class="market-item">
-                        <div class="market-item-top">
-                            <img src="@/assets/images/home/mobile-zhuangbei.png" alt="" />
-                        </div>
-                        <div class="market-item-name">
-                            <p>Prop name</p>
-                            <p>10,086</p>
-                        </div>
-                    </div>
-                    <div class="market-item">
-                        <div class="market-item-top">
-                            <img src="@/assets/images/home/mobile-zhuangbei.png" alt="" />
-                        </div>
-                        <div class="market-item-name">
-                            <p>Prop name</p>
-                            <p>10,086</p>
-                        </div>
-                    </div>
-                    <div class="market-item">
-                        <div class="market-item-top">
-                            <img src="@/assets/images/home/mobile-zhuangbei.png" alt="" />
-                        </div>
-                        <div class="market-item-name">
-                            <p>Prop name</p>
-                            <p>10,086</p>
-                        </div>
-                    </div>
-                    <div class="market-item">
-                        <div class="market-item-top">
-                            <img src="@/assets/images/home/mobile-zhuangbei.png" alt="" />
-                        </div>
-                        <div class="market-item-name">
-                            <p>Prop name</p>
-                            <p>10,086</p>
-                        </div>
-                    </div>
-                    <div class="market-item">
-                        <div class="market-item-top">
-                            <img src="@/assets/images/home/mobile-zhuangbei.png" alt="" />
-                        </div>
-                        <div class="market-item-name">
-                            <p>Prop name</p>
-                            <p>10,086</p>
-                        </div>
-                    </div>
-                    <div class="market-item">
-                        <div class="market-item-top">
-                            <img src="@/assets/images/home/mobile-zhuangbei.png" alt="" />
-                        </div>
-                        <div class="market-item-name">
-                            <p>Prop name</p>
-                            <p>10,086</p>
-                        </div>
-                    </div>
+                    <MobileMarketItem v-for="item in 6" :key="item" />
                 </div>
             </div>
             <div class="news">
@@ -141,12 +49,14 @@
 import MobileHeader from '@/components/mobile/mobile-header.vue'
 import MobileBanner from '@/components/mobile/mobile-banner.vue'
 import MobileGames from '@/components/mobile/mobile-games.vue'
+import MobileMarketItem from '@/components/mobile/mobile-market-item.vue'
+import MobileRankingList from '@/components/mobile/mobile-ranking-list.vue'
 export default {
     name: 'home',
     data() {
         return {}
     },
-    components: { MobileHeader, MobileBanner, MobileGames },
+    components: { MobileHeader, MobileBanner, MobileGames, MobileMarketItem, MobileRankingList },
     mounted() {},
 }
 </script>
@@ -202,91 +112,12 @@ export default {
                 }
             }
         }
-        .ranking-list {
-            margin-top: 50px;
-            .ranking-list-top {
-                display: flex;
-                .ranking-type {
-                    font-size: 28px;
-                    font-weight: 400;
-                    color: #999999;
-                    margin-right: 50px;
-                }
-                .more {
-                    margin-left: auto;
-                    width: 80px;
-                    height: 32px;
-                    background: #232323;
-                    border-radius: 16px;
-                    font-size: 20px;
-                    font-weight: 400;
-                    color: #999999;
-                    line-height: 32px;
-                    text-align: center;
-                }
-            }
-            .ranking-list-content {
-                background: #323232;
-                border-radius: 10px;
-                padding: 25px 30px;
-                box-sizing: border-box;
-                margin-top: 31px;
-                .ranking-list-content-item {
-                    display: flex;
-                    align-items: center;
-                    font-size: 24px;
-                    font-weight: 400;
-                    color: #fcfbfb;
-                    margin-top: 32px;
-                    .head-portrait {
-                        width: 70px;
-                        height: 70px;
-                        margin: 0 19px 0 32px;
-                    }
-                    .marny {
-                        margin-left: auto;
-                    }
-                }
-            }
-        }
         .market {
             margin-top: 50px;
             .market-box {
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: space-between;
-
-                .market-item {
-                    width: 214px;
-                    height: 300px;
-                    display: flex;
-                    flex-direction: column;
-                    border-radius: 10px;
-                    overflow: hidden;
-                    margin-top: 35px;
-                    .market-item-top {
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        width: 214px;
-                        height: 210px;
-                        background-color: #414040;
-                        img {
-                            width: 150px;
-                        }
-                    }
-                    .market-item-name {
-                        flex: 1;
-                        background-color: #323232;
-                        padding: 18px;
-                        box-sizing: border-box;
-                        p {
-                            font-size: 24px;
-                            font-weight: 400;
-                            color: #e8e8e8;
-                        }
-                    }
-                }
             }
         }
         .news {

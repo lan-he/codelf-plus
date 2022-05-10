@@ -1,27 +1,37 @@
 <template>
     <div class="games">
         <div class="games-top">
-            <div class="games-title">Games</div>
+            <div class="games-title">{{ gameTitle }}</div>
             <div class="more">more</div>
         </div>
         <swiper class="swiper" :options="swiperOption">
             <swiper-slide>
                 <img src="@/assets/images/home/GFY03.png" />
+                <span class="game-title">Matchstick Men</span>
             </swiper-slide>
             <swiper-slide>
                 <img src="@/assets/images/home/GFY03.png" />
+                <span class="game-title">Matchstick Men</span>
             </swiper-slide>
             <swiper-slide>
                 <img src="@/assets/images/home/GFY03.png" />
+                <span class="game-title">Matchstick Men</span>
             </swiper-slide>
             <swiper-slide>
                 <img src="@/assets/images/home/GFY03.png" />
+                <span class="game-title">Matchstick Men</span>
             </swiper-slide>
             <swiper-slide>
                 <img src="@/assets/images/home/GFY03.png" />
+                <span class="game-title">Matchstick Men</span>
             </swiper-slide>
             <swiper-slide>
                 <img src="@/assets/images/home/GFY03.png" />
+                <span class="game-title">Matchstick Men</span>
+            </swiper-slide>
+            <swiper-slide>
+                <img src="@/assets/images/home/GFY03.png" />
+                <span class="game-title">Matchstick Men</span>
             </swiper-slide>
             <div class="swiper-scrollbar" slot="scrollbar"></div>
         </swiper>
@@ -47,6 +57,12 @@ export default {
                 },
             },
         }
+    },
+    props: {
+        gameTitle: {
+            type: String,
+            default: 'Games',
+        },
     },
     mounted() {},
 }
@@ -80,17 +96,21 @@ export default {
         margin-top: 34px;
         overflow-x: hidden;
         overflow-y: visible;
-        height: 360px;
-        // background-color: aqua;
+        height: 420px;
         .swiper-slide {
             width: 240px;
             height: 320px;
             margin-right: 20px;
-            border-radius: 10px;
-            overflow: hidden;
             img {
                 width: 100%;
                 height: 100%;
+                border-radius: 10px;
+            }
+            .game-title {
+                font-size: 24px;
+                font-weight: 400;
+                color: #e8e8e8;
+                padding-left: 10px;
             }
         }
         .swiper-scrollbar {

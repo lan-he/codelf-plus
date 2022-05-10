@@ -27,35 +27,8 @@
             <div class="imgs">
                 <p class="title">Partners</p>
                 <ul>
-                    <li>
-                        <img src="@/assets/images/news/合作LOGO01.png" alt="" />
-                    </li>
-                    <li>
-                        <img src="@/assets/images/news/合作LOGO02.png" alt="" />
-                    </li>
-                    <li>
-                        <img src="@/assets/images/news/合作LOGO03.png" alt="" />
-                    </li>
-                    <li>
-                        <img src="@/assets/images/news/合作LOGO04.png" alt="" />
-                    </li>
-                    <li>
-                        <img src="@/assets/images/news/合作LOGO05.png" alt="" />
-                    </li>
-                    <li>
-                        <img src="@/assets/images/news/合作LOGO06.png" alt="" />
-                    </li>
-                    <li>
-                        <img src="@/assets/images/news/合作LOGO07.png" alt="" />
-                    </li>
-                    <li>
-                        <img src="@/assets/images/news/合作LOGO08.png" alt="" />
-                    </li>
-                    <li>
-                        <img src="@/assets/images/news/合作LOGO09.png" alt="" />
-                    </li>
-                    <li>
-                        <img src="@/assets/images/news/合作LOGO10.png" alt="" />
+                    <li v-for="item in 20" :key="item">
+                        <i class="iconfont icon-pingguo"></i>
                     </li>
                 </ul>
             </div>
@@ -233,8 +206,11 @@ export default {
                 flex-wrap: wrap;
                 justify-content: space-around;
                 li {
-                    width: 17%;
-                    text-align: center;
+                    margin: 0 20px;
+                    i {
+                        font-size: 60px;
+                        color: #666666;
+                    }
                 }
             }
         }
