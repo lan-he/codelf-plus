@@ -5,20 +5,8 @@
             <div class="more">more</div>
         </div>
         <div class="games-view-box">
-            <div class="games-view-box-item">
-                <img src="@/assets/images/game/icon4.png" alt="" />
-                <span class="games-titles">Tank Hero </span>
-                <span class="games-detiles">property</span>
-                <div class="view-button">View</div>
-            </div>
-            <div class="games-view-box-item">
-                <img src="@/assets/images/game/icon4.png" alt="" />
-                <span class="games-titles">Tank Hero </span>
-                <span class="games-detiles">property</span>
-                <div class="view-button">View</div>
-            </div>
-            <div class="games-view-box-item">
-                <img src="@/assets/images/game/icon4.png" alt="" />
+            <div class="games-view-box-item" v-for="item in 3" :key="item" @click="onGameEnter">
+                <img src="@/assets/images/game/icon4.png" />
                 <span class="games-titles">Tank Hero </span>
                 <span class="games-detiles">property</span>
                 <div class="view-button">View</div>
@@ -31,6 +19,11 @@ export default {
     name: 'mobile-games-view',
     data() {
         return {}
+    },
+    methods: {
+        onGameEnter() {
+            this.$router.push('/games-detail-m')
+        },
     },
     props: {
         gameTitle: {

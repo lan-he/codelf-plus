@@ -16,6 +16,14 @@ const routes = [
         },
     },
     {
+        path: '/games-detail-m',
+        name: 'games-detail-m',
+        component: () => import(`@/views/mobile//games/games-detail.vue`),
+        meta: {
+            equipment: 'mobile',
+        },
+    },
+    {
         path: '/markeet-place-m',
         name: 'markeet-place-m',
         component: () => import(`@/views/mobile/markeet-place/markeet-place.vue`),
@@ -35,6 +43,14 @@ const routes = [
         path: '/offerwall-m',
         name: 'offerwall-m',
         component: () => import(`@/views/mobile/offerwall/offerwall.vue`),
+        meta: {
+            equipment: 'mobile',
+        },
+    },
+    {
+        path: '/about-m',
+        name: 'about-m',
+        component: () => import(`@/views/mobile/about/about.vue`),
         meta: {
             equipment: 'mobile',
         },

@@ -1,17 +1,9 @@
 <template>
     <div class="banner">
         <swiper class="swiper" :options="swiperOption">
-            <swiper-slide>
+            <swiper-slide v-for="item in 5" :key="item">
                 <img src="@/assets/images/home/mobile-swiper.png" />
-            </swiper-slide>
-            <swiper-slide>
-                <img src="@/assets/images/home/mobile-swiper.png" />
-            </swiper-slide>
-            <swiper-slide>
-                <img src="@/assets/images/home/mobile-swiper.png" />
-            </swiper-slide>
-            <swiper-slide>
-                <img src="@/assets/images/home/mobile-swiper.png" />
+                <div class="download">Download</div>
             </swiper-slide>
             <div class="swiper-pagination" slot="pagination"></div>
         </swiper>
@@ -53,6 +45,20 @@ export default {
             img {
                 width: 100%;
                 height: 100%;
+            }
+            .download {
+                width: 168px;
+                height: 54px;
+                background: #268aef;
+                border-radius: 27px;
+                font-size: 24px;
+                font-weight: 400;
+                color: #fcf9f9;
+                text-align: center;
+                line-height: 54px;
+                position: absolute;
+                bottom: 19px;
+                right: 34px;
             }
         }
         .swiper-pagination-bullets {

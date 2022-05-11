@@ -5,31 +5,7 @@
             <div class="more">more</div>
         </div>
         <swiper class="swiper" :options="swiperOption">
-            <swiper-slide>
-                <img src="@/assets/images/home/GFY03.png" />
-                <span class="game-title">Matchstick Men</span>
-            </swiper-slide>
-            <swiper-slide>
-                <img src="@/assets/images/home/GFY03.png" />
-                <span class="game-title">Matchstick Men</span>
-            </swiper-slide>
-            <swiper-slide>
-                <img src="@/assets/images/home/GFY03.png" />
-                <span class="game-title">Matchstick Men</span>
-            </swiper-slide>
-            <swiper-slide>
-                <img src="@/assets/images/home/GFY03.png" />
-                <span class="game-title">Matchstick Men</span>
-            </swiper-slide>
-            <swiper-slide>
-                <img src="@/assets/images/home/GFY03.png" />
-                <span class="game-title">Matchstick Men</span>
-            </swiper-slide>
-            <swiper-slide>
-                <img src="@/assets/images/home/GFY03.png" />
-                <span class="game-title">Matchstick Men</span>
-            </swiper-slide>
-            <swiper-slide>
+            <swiper-slide v-for="item in 8" :key="item">
                 <img src="@/assets/images/home/GFY03.png" />
                 <span class="game-title">Matchstick Men</span>
             </swiper-slide>

@@ -26,7 +26,7 @@
             </div>
             <div class="news">
                 <div class="games-top">
-                    <div class="games-title">Market</div>
+                    <div class="games-title">News</div>
                     <div class="more">more</div>
                 </div>
                 <div class="new-list">
@@ -41,7 +41,7 @@
                 </div>
             </div>
         </div>
-        <footer></footer>
+        <footer>© 2022 Metabridge. All rights reserved</footer>
     </div>
 </template>
 
@@ -102,8 +102,8 @@ export default {
                     background-image: linear-gradient(
                         to bottom,
                         rgba(0, 0, 0, 0) 0%,
-                        rgba(0, 0, 0, 0.4) 10%,
-                        rgba(0, 0, 0, 0.6) 40%,
+                        rgba(0, 0, 0, 0.3) 10%,
+                        rgba(0, 0, 0, 0.7) 40%,
                         rgba(0, 0, 0, 0.8) 60%,
                         rgba(0, 0, 0, 1) 100%
                     );
@@ -149,6 +149,11 @@ export default {
         width: 750px;
         height: 292px;
         background: #111111;
+        padding-top: 70px;
+        text-align: center;
+        font-size: 24px;
+        font-weight: 400;
+        color: #ffffff;
     }
 }
 .games-top {

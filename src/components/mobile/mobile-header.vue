@@ -7,14 +7,9 @@
         </div>
         <div class="phone-header-menu" v-if="headerMenu">
             <i class="iconfont icon-close close"></i>
-            <div
-                class="icon-item"
-                v-for="(item, index) in navlistShow"
-                :key="index"
-                @click="changenavlistcurrent(index)"
-            >
-                <i class="iconfont icon-game"></i>
-                <span>{{ item }}</span>
+            <div class="icon-item" v-for="(item, index) in navlist" :key="index" @click="changenavlistcurrent(index)">
+                <i class="iconfont" :class="item.icon"></i>
+                <span>{{ item.showName }}</span>
             </div>
         </div>
     </div>
@@ -27,13 +22,44 @@ export default {
         return {
             headerMenu: false,
             navlistShow: ['Home', 'Games', 'MarkeetPlace', 'News', 'Offerwall', 'About'],
-            navlist: ['home-m', 'games-m', 'markeet-place-m', 'news-m', 'offerwall-m', 'about-m'],
+            navlist: [
+                {
+                    showName: 'Home',
+                    path: 'home-m',
+                    icon: 'icon-zhuye2',
+                },
+                {
+                    showName: 'Games',
+                    path: 'games-m',
+                    icon: 'icon-game',
+                },
+                {
+                    showName: 'MarkeetPlace',
+                    path: 'markeet-place-m',
+                    icon: 'icon-w_shangdian',
+                },
+                {
+                    showName: 'Offerwall',
+                    path: 'offerwall-m',
+                    icon: 'icon-huangguan',
+                },
+                {
+                    showName: 'News',
+                    path: 'news-m',
+                    icon: 'icon-xinwen',
+                },
+                {
+                    showName: 'About',
+                    path: 'about-m',
+                    icon: 'icon-xingqiu',
+                },
+            ],
         }
     },
     methods: {
         changenavlistcurrent(index) {
             this.headerMenu = false
-            this.$router.push(`/${this.navlist[index]}`)
+            this.$router.push(`/${this.navlist[index].path}`)
         },
     },
 }
@@ -91,7 +117,7 @@ export default {
             height: 100px;
             i {
                 font-size: 42px;
-                margin: 0 20px;
+                margin: 0 40px;
                 color: rgb(184, 184, 184);
             }
             span {

@@ -5,7 +5,7 @@
 </template>
 
 <style lang="less">
-@import '//at.alicdn.com/t/font_3364060_um9qnf24bxt.css';
+// @import '//at.alicdn.com/t/font_3364060_um9qnf24bxt.css';
 * {
     margin: 0;
     padding: 0;

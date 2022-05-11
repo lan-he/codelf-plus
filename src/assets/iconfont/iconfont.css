@@ -1,8 +1,8 @@
 @font-face {
   font-family: "iconfont"; /* Project id 3364060 */
-  src: url('iconfont.woff2?t=1651916001480') format('woff2'),
-       url('iconfont.woff?t=1651916001480') format('woff'),
-       url('iconfont.ttf?t=1651916001480') format('truetype');
+  src: url('iconfont.woff2?t=1652253365363') format('woff2'),
+       url('iconfont.woff?t=1652253365363') format('woff'),
+       url('iconfont.ttf?t=1652253365363') format('truetype');
 }
 
 .iconfont {
@@ -11,6 +11,46 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-pingguo:before {
+  content: "\e63d";
+}
+
+.icon-arrow-down:before {
+  content: "\e665";
+}
+
+.icon-sousuo:before {
+  content: "\e8ba";
+}
+
+.icon-xingqiu:before {
+  content: "\e8e7";
+}
+
+.icon-xinwen:before {
+  content: "\e69e";
+}
+
+.icon-huangguan:before {
+  content: "\e909";
+}
+
+.icon-w_shangdian:before {
+  content: "\e67b";
+}
+
+.icon-zhuye2:before {
+  content: "\e603";
+}
+
+.icon-game:before {
+  content: "\e6df";
+}
+
+.icon-close:before {
+  content: "\e668";
 }
 
 .icon-liebiao2:before {
