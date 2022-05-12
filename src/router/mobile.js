@@ -55,5 +55,13 @@ const routes = [
             equipment: 'mobile',
         },
     },
+    {
+        path: '/news-detile-m',
+        name: '/news-detile-m',
+        component: () => import(`@/views/mobile/news/news-detail.vue`),
+        meta: {
+            equipment: 'mobile',
+        },
+    },
 ]
 export default routes

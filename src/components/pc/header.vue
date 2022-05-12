@@ -16,7 +16,7 @@
                 </li>
             </ul>
             <div class="login" @click="loginBox = true">
-                <img src="@/assets/images/home/login.png" alt="" />
+                <i class="iconfont icon-jurassic_user"></i>
             </div>
         </nav>
         <LoginPop v-if="loginBox" @closeLogin="loginBox = fales" />
@@ -60,6 +60,7 @@ export default {
     left: 0;
     z-index: 9;
     nav {
+        width: 1200px;
         height: 90px;
         margin: 0 auto;
         display: flex;
@@ -100,12 +101,17 @@ export default {
             }
         }
         .login {
-            width: 5%;
+            width: 43px;
+            height: 43px;
+            background: #323232;
+            border-radius: 50%;
             display: flex;
             align-items: center;
-            img {
-                width: 50px;
-                height: 50px;
+            justify-content: center;
+            cursor: pointer;
+            i {
+                font-size: 25px;
+                color: #888;
             }
         }
     }

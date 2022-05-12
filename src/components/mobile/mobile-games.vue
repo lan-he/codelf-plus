@@ -6,7 +6,7 @@
         </div>
         <swiper class="swiper" :options="swiperOption">
             <swiper-slide v-for="item in 8" :key="item">
-                <img src="@/assets/images/home/GFY03.png" />
+                <img src="@/assets/images/home/GFY03.png" @click="$router.push('/games-detail-m')" />
                 <span class="game-title">Matchstick Men</span>
             </swiper-slide>
             <div class="swiper-scrollbar" slot="scrollbar"></div>

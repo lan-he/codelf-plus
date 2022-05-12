@@ -50,28 +50,28 @@ export default {
                         'UneMeta is a social and market DAO project centered around creating a sustainable NFT ecosystem that benefits .....',
                 },
                 {
-                    imgsrc: require('@/assets/images/news/news03.png'),
+                    imgsrc: require('@/assets/images/news/news01.png'),
                     title: 'Value of Participation and Activity',
                     time: '2 days ago',
                     content:
                         'UneMeta is a social and market DAO project centered around creating a sustainable NFT ecosystem that benefits .....',
                 },
                 {
-                    imgsrc: require('@/assets/images/news/news04.png'),
+                    imgsrc: require('@/assets/images/news/news02.png'),
                     title: 'Value of Participation and Activity',
                     time: '2 days ago',
                     content:
                         'UneMeta is a social and market DAO project centered around creating a sustainable NFT ecosystem that benefits .....',
                 },
                 {
-                    imgsrc: require('@/assets/images/news/news05.png'),
+                    imgsrc: require('@/assets/images/news/news01.png'),
                     title: 'Value of Participation and Activity',
                     time: '2 days ago',
                     content:
                         'UneMeta is a social and market DAO project centered around creating a sustainable NFT ecosystem that benefits .....',
                 },
                 {
-                    imgsrc: require('@/assets/images/news/news06.png'),
+                    imgsrc: require('@/assets/images/news/news02.png'),
                     title: 'Value of Participation and Activity',
                     time: '2 days ago',
                     content:

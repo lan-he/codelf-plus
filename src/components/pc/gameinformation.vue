@@ -26,7 +26,10 @@
                     Experience the next level virtual warfare with hardcore controls, lethal weapons, customizable
                     firefights.
                 </div>
-                <button>download</button>
+                <div class="game-download">
+                    <i class="iconfont icon-anzhuo"></i>
+                    <span>Download</span>
+                </div>
             </div>
         </div>
     </div>
@@ -160,14 +163,21 @@ export default {
                 padding-top: 20px;
                 border-top: solid 1px #242323;
             }
-            button {
-                width: 300px;
-                height: 60px;
-                border-radius: 10px;
+            .game-download {
+                width: 259px;
+                height: 52px;
+                background: #268aef;
+                border-radius: 9px;
                 margin: 10px auto;
                 color: #fff;
                 font-size: 20px;
-                background: #268aef url(../../assets/images/game/andio.png) no-repeat 20% center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                i {
+                    margin-right: 20px;
+                    font-size: 20px;
+                }
             }
         }
     }

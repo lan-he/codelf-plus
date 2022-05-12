@@ -2,7 +2,7 @@
     <div class="banner">
         <swiper class="swiper" :options="swiperOption">
             <swiper-slide v-for="item in 5" :key="item">
-                <img src="@/assets/images/home/mobile-swiper.png" />
+                <img src="@/assets/images/home/mobile-swiper.png" @click="$router.push('/games-detail-m')" />
                 <div class="download">Download</div>
             </swiper-slide>
             <div class="swiper-pagination" slot="pagination"></div>
@@ -19,7 +19,7 @@ export default {
         return {
             swiperOption: {
                 autoplay: {
-                    delay: 5000,
+                    delay: 3000,
                 },
                 spaceBetween: 10,
                 pagination: {

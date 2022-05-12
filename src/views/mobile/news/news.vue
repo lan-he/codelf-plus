@@ -2,7 +2,7 @@
     <div class="news">
         <MobileHeader />
         <div class="news-centent">
-            <img class="news-img" src="@/assets/images/news/news04.png" alt="" />
+            <img class="news-img" src="@/assets/images/news/news02.png" alt="" />
             <MobileNewsList />
         </div>
     </div>

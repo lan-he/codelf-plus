@@ -1,6 +1,6 @@
 <template>
     <div class="news-list">
-        <div class="news-list-item" v-for="item in 6" :key="item">
+        <div class="news-list-item" v-for="item in 6" :key="item" @click="$router.push('/news-detile-m')">
             <img src="@/assets/images/news/news01.png" />
             <div class="new-left">
                 <p class="news-titile">This is news name you can write every things about matabridge</p>

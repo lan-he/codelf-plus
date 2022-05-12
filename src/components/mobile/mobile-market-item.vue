@@ -1,7 +1,7 @@
 <template>
     <div class="market-item">
         <div class="market-item-top">
-            <img src="@/assets/images/home/mobile-zhuangbei.png" alt="" />
+            <img src="@/assets/images/home/mobile-zhuangbei.png" />
         </div>
         <div class="market-item-name">
             <p>Prop name</p>
