@@ -1,8 +1,8 @@
 <template>
     <div class="phone-header">
         <i class="iconfont icon-liebiao2" @click="headerMenu = true"></i>
-        <span>mate</span>
-        <div class="userinfo">
+        <img class="top-logo" src="@/assets/images/login/mobile-top-logo.png" />
+        <div class="userinfo" @click="$router.push('/login-m')">
             <i class="iconfont icon-jurassic_user"></i>
         </div>
         <div class="phone-header-menu" v-if="headerMenu">
@@ -79,9 +79,8 @@ export default {
         font-size: 40px;
         color: #fff;
     }
-    span {
-        font-size: 38px;
-        color: #fff;
+    .top-logo {
+        width: 190px;
     }
     .userinfo {
         width: 50px;

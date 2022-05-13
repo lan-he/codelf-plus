@@ -63,5 +63,13 @@ const routes = [
             equipment: 'mobile',
         },
     },
+    {
+        path: '/login-m',
+        name: '/login-m',
+        component: () => import(`@/views/mobile/login/login.vue`),
+        meta: {
+            equipment: 'mobile',
+        },
+    },
 ]
 export default routes
