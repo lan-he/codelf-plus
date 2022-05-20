@@ -1,7 +1,7 @@
 <template>
     <div class="news-list">
         <div class="news-list-item" v-for="item in 6" :key="item" @click="$router.push('/news-detile-m')">
-            <img src="@/assets/images/news/news01.png" />
+            <div class="news-img"><img src="@/assets/images/news/news01.png" /></div>
             <div class="new-left">
                 <p class="news-titile">This is news name you can write every things about matabridge</p>
                 <div>
@@ -29,9 +29,18 @@ export default {
         display: flex;
         align-items: center;
         border-bottom: 1px solid #414040;
-        img {
-            width: 200px;
+        .news-img {
+            width: 350px;
             height: 150px;
+            position: relative;
+            overflow: hidden;
+            img {
+                height: 150px;
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+            }
         }
         .new-left {
             margin-left: 33px;
@@ -53,7 +62,7 @@ export default {
             color: #999999;
             border: 1px solid #999999;
             border-radius: 20px;
-            padding: 0 6px;
+            padding: 0 12px;
             margin-left: 30px;
         }
     }

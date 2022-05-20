@@ -17,9 +17,13 @@
                     <span>All Coin</span>
                     <i class="iconfont icon-arrow-down"></i>
                 </div>
+                <div class="screen-filter">
+                    <span>Filter</span>
+                    <i class="iconfont icon-filter"></i>
+                </div>
             </div>
             <div class="mark-box">
-                <MobileMarketItem v-for="item in 9" :key="item" />
+                <MobileMarketItem :tag="false" v-for="item in 9" :key="item" />
             </div>
             <MobileGames gameTitle="NFT Games" />
         </div>
@@ -79,6 +83,23 @@ export default {
                 margin-right: 28px;
                 i {
                     margin-left: 5px;
+                }
+            }
+            .screen-filter {
+                width: 186px;
+                height: 50px;
+                background: rgba(23, 23, 23, 0);
+                border: 1px solid #4b4b4b;
+                border-radius: 35px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #fcfcfc;
+                font-size: 28px;
+                margin-left: auto;
+                i {
+                    font-size: 22px;
+                    margin-left: 22px;
                 }
             }
         }

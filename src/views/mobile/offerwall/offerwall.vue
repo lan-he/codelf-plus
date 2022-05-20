@@ -20,18 +20,20 @@
         </div>
         <div class="mobile-game-centent">
             <MobileRankingList :rankingNumber="10" />
+            <MobileTask />
         </div>
     </div>
 </template>
 <script>
 import MobileHeader from '@/components/mobile/mobile-header.vue'
 import MobileRankingList from '@/components/mobile/mobile-ranking-list.vue'
+import MobileTask from '@/components/mobile/mobile-task.vue'
 export default {
     name: 'mobile-game',
     data() {
         return {}
     },
-    components: { MobileHeader, MobileRankingList },
+    components: { MobileHeader, MobileRankingList, MobileTask },
 }
 </script>
 <style lang="less" scoped>

@@ -92,6 +92,7 @@ export default {
         justify-content: center;
         i {
             font-size: 30px;
+            color: #888888;
         }
     }
     .phone-header-menu {

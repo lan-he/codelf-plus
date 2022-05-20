@@ -1,11 +1,12 @@
 <template>
     <div class="market-item">
+        <div v-if="tag" class="market-item-tag hot">Hot</div>
         <div class="market-item-top">
             <img src="@/assets/images/home/mobile-zhuangbei.png" />
         </div>
         <div class="market-item-name">
             <p>Prop name</p>
-            <p>10,086</p>
+            <p><i class="yello-spot"></i> 10,086</p>
         </div>
     </div>
 </template>
@@ -14,6 +15,12 @@ export default {
     name: 'mobile-market-item',
     data() {
         return {}
+    },
+    props: {
+        tag: {
+            type: Boolean,
+            default: true,
+        },
     },
 }
 </script>
@@ -26,6 +33,24 @@ export default {
     border-radius: 10px;
     overflow: hidden;
     margin-top: 35px;
+    position: relative;
+    .market-item-tag {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 62px;
+        height: 24px;
+        border-radius: 0 10px 0 10px;
+        display: flex;
+        color: #fff;
+        font-size: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .hot {
+        background-color: #ec4a18;
+    }
     .market-item-top {
         display: flex;
         justify-content: center;
@@ -46,6 +71,16 @@ export default {
             font-size: 24px;
             font-weight: 400;
             color: #e8e8e8;
+            display: flex;
+            align-items: center;
+        }
+        .yello-spot {
+            display: block;
+            width: 12px;
+            height: 12px;
+            background: #e7ad32;
+            border-radius: 50%;
+            margin-right: 10px;
         }
     }
 }
