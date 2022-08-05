@@ -18,6 +18,12 @@ async function getApi() {
     console.log('sadsda')
     // const q = '啦啦啦'
     // XLAWBA5mBQaKdcFFZP9D
+    // const ress = await getNft('0x8b5FaB3B0724F1a8a01340154A6AF1fab3f2ceaa', {
+    //     chain: 'ethereum',
+    //     include: 'metadata',
+    //     page_size: 10,
+    // })
+    // console.log(ress, 'ressress')
     const res = await vipTranslate({
         q: '你好',
         from: 'auto',

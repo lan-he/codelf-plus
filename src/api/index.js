@@ -8,3 +8,9 @@ export const vipTranslate = (data) => {
         data,
     })
 }
+export const getNft = (assets, data) => {
+    return service({
+        url: `/v0/accounts/${assets}${objToUrl(data)}`,
+        method: 'get',
+    })
+}

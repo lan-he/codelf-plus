@@ -1,12 +1,14 @@
 import axios from 'axios'
 let service = axios.create({
-    baseURL: 'https://fanyi-api.baidu.com/',
+    // baseURL: 'https://fanyi-api.baidu.com/',
+    // baseURL: 'https://api.nftport.xyz/',
     timeout: 10000,
 })
 // 请求拦截器
 service.interceptors.request.use(
     (config) => {
         // config.headers['Content-Type'] = 'application/x-www-form-urlencoded'
+        config.headers['authorization'] = 'f73603e4-18d8-4936-bf31-82f20f71950d'
         return config
     },
     (error) => {

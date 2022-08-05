@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/main.33b4ce95.css","mappings":"AAAA,EACI,QACJ,CCFA,KACI,qBACJ,CCFA,UACI,qBACJ","sources":["index.less","App.less","views/home.less"],"sourcesContent":["* {\n    margin: 0;\n}\n",".App {\n    background-color: pink;\n}\n",".home-box {\n    background-color: aqua;\n}\n"],"names":[],"sourceRoot":""}
