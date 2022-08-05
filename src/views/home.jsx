@@ -1,37 +1,48 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
+import md5 from 'js-md5'
 import './home.less'
 import { vipTranslate } from '@/api/index.js'
 function Home() {
-    const [count, setCount] = useState(0)
+    const renderRef = useRef(true)
+    const [translation, setTranslation] = useState('你好世界')
+    const [answer, setAnswer] = useState('')
 
     useEffect(() => {
-        getApi()
+        if (renderRef.current) {
+            renderRef.current = false
+            return
+        }
+        requestTranslationApi()
     }, [])
+    const handleChange = (e) => {
+        setTranslation(e.target.value)
+    }
+    const requestTranslationApi = async () => {
+        const randomThis = random(1000, 100000)
+        const appid = '20220730001287605'
+        const miyao = 'XLAWBA5mBQaKdcFFZP9D'
+        const res = await vipTranslate({
+            q: translation,
+            from: 'auto',
+            to: 'en',
+            appid: appid,
+            salt: randomThis,
+            sign: md5(appid + translation + randomThis + miyao),
+        })
+        if (res.data.trans_result) {
+            setAnswer(res.data.trans_result[0].dst)
+        }
+    }
+    function random(min, max) {
+        return Math.round(Math.random() * (max - min)) + min
+    }
     return (
         <div>
-            <p>You clicked {count} times</p>
-            <button onClick={() => setCount(count + 1)}>Click me</button>
+            <input value={translation} onChange={handleChange} />
+            <button onClick={requestTranslationApi}>Click me</button>
+            <p>{answer}</p>
         </div>
     )
 }
-async function getApi() {
-    console.log('sadsda')
-    // const q = '啦啦啦'
-    // XLAWBA5mBQaKdcFFZP9D
-    // const ress = await getNft('0x8b5FaB3B0724F1a8a01340154A6AF1fab3f2ceaa', {
-    //     chain: 'ethereum',
-    //     include: 'metadata',
-    //     page_size: 10,
-    // })
-    // console.log(ress, 'ressress')
-    const res = await vipTranslate({
-        q: '你好',
-        from: 'auto',
-        to: 'en',
-        appid: '20220730001287605',
-        salt: '1435660288',
-        sign: '60d62db53d17123a911677cfccbea0e7',
-    })
-    console.log(res)
-}
+
 export default Home

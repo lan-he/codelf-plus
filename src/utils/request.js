@@ -8,7 +8,7 @@ let service = axios.create({
 service.interceptors.request.use(
     (config) => {
         // config.headers['Content-Type'] = 'application/x-www-form-urlencoded'
-        config.headers['authorization'] = 'f73603e4-18d8-4936-bf31-82f20f71950d'
+        // config.headers['authorization'] = 'f73603e4-18d8-4936-bf31-82f20f71950d'
         return config
     },
     (error) => {

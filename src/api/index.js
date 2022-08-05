@@ -4,7 +4,7 @@ import { objToUrl } from '@/utils/common.js'
 export const vipTranslate = (data) => {
     return service({
         url: `/backend/api/trans/vip/translate${objToUrl(data)}`,
-        method: 'GET',
+        method: 'POST',
         data,
     })
 }
