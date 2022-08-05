@@ -3,10 +3,10 @@ import './home.less'
 import { vipTranslate } from '@/api/index.js'
 function Home() {
     const [count, setCount] = useState(0)
+
     useEffect(() => {
-        console.log('asdasdasd')
         getApi()
-    })
+    }, [])
     return (
         <div>
             <p>You clicked {count} times</p>
@@ -15,8 +15,16 @@ function Home() {
     )
 }
 async function getApi() {
+    console.log('sadsda')
+    // const q = '啦啦啦'
+    // XLAWBA5mBQaKdcFFZP9D
     const res = await vipTranslate({
-        q: '哈哈',
+        q: '你好',
+        from: 'auto',
+        to: 'en',
+        appid: '20220730001287605',
+        salt: '1435660288',
+        sign: '60d62db53d17123a911677cfccbea0e7',
     })
     console.log(res)
 }

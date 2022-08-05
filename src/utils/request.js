@@ -1,12 +1,12 @@
 import axios from 'axios'
 let service = axios.create({
-    // baseURL: 'https://fanyi-api.baidu.com/',
+    baseURL: 'https://fanyi-api.baidu.com/',
     timeout: 10000,
 })
 // 请求拦截器
 service.interceptors.request.use(
     (config) => {
-        // config.headers['authorization'] = 'f73603e4-18d8-4936-bf31-82f20f71950d'
+        // config.headers['Content-Type'] = 'application/x-www-form-urlencoded'
         return config
     },
     (error) => {
