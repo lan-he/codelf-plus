@@ -3,7 +3,7 @@ import { objToUrl } from '@/utils/common.js'
 
 export const vipTranslate = (data) => {
     return service({
-        url: `/api/trans/vip/translate${objToUrl(data)}`,
+        url: `/backend/api/trans/vip/translate${objToUrl(data)}`,
         method: 'GET',
         data,
     })

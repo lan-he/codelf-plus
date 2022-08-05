@@ -9,15 +9,15 @@ module.exports = {
         },
     },
     devServer: {
-        proxy: {
-            '/api': {
-                target: 'https://fanyi-api.baidu.com/',
-                changeOrigin: true,
-                pathRewrite: {
-                    '^/api': 'api',
-                },
-            },
-        },
+        // proxy: {
+        //     '/api': {
+        //         target: 'https://fanyi-api.baidu.com/',
+        //         changeOrigin: true,
+        //         pathRewrite: {
+        //             '^/api': 'api',
+        //         },
+        //     },
+        // },
     },
     plugins: [{ plugin: CracoLessPlugin }],
 }
