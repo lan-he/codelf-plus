@@ -10,11 +10,11 @@ module.exports = {
     },
     devServer: {
         proxy: {
-            '/api': {
+            '/backend': {
                 target: 'https://fanyi-api.baidu.com/',
                 changeOrigin: true,
                 pathRewrite: {
-                    '^/api': 'api',
+                    '^/backend': '/',
                 },
             },
         },
