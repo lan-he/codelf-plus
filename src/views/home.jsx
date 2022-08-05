@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react'
 import md5 from 'js-md5'
-import './home.less'
 import { vipTranslate } from '@/api/index.js'
+import './home.less'
 function Home() {
     const renderRef = useRef(true)
     const [translation, setTranslation] = useState('你好世界')
@@ -12,7 +12,7 @@ function Home() {
             renderRef.current = false
             return
         }
-        requestTranslationApi()
+        // requestTranslationApi()
     }, [])
     const handleChange = (e) => {
         setTranslation(e.target.value)
@@ -37,10 +37,24 @@ function Home() {
         return Math.round(Math.random() * (max - min)) + min
     }
     return (
-        <div>
-            <input value={translation} onChange={handleChange} />
-            <button onClick={requestTranslationApi}>Click me</button>
-            <p>{answer}</p>
+        <div className="translate-codelf-box">
+            <div className="translation-operation-box">
+                <div className="select-inner">中文</div>
+                <i className="select-inner-icon">a</i>
+                <div className="select-inner">英语</div>
+                <button class="custom-btn btn-12" onClick={requestTranslationApi}>
+                    <span>Click</span>
+                    <span>翻译</span>
+                </button>
+            </div>
+            <div className="translate-codelf-input-box">
+                <div className="translate-codelf-input">
+                    <textarea className="textarea-box" value={translation} onChange={handleChange} />
+                </div>
+                <div className="translate-codelf-output">
+                    <span>{answer}</span>
+                </div>
+            </div>
         </div>
     )
 }

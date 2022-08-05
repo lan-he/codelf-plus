@@ -1,3 +1,147 @@
-.home-box {
-    background-color: aqua;
+.translate-codelf-box {
+    width: 1100px;
+    margin: 0 auto;
+    padding-top: 30px;
+    .translation-operation-box {
+        display: flex;
+        .select-inner {
+            min-width: 176px;
+            height: 40px;
+            line-height: 40px;
+            font-size: 14px;
+            background: #fff;
+            border: 1px solid #dcdcdc;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .select-inner-icon {
+            display: block;
+            background-color: #f9f9f9;
+            height: 30px;
+            line-height: 30px;
+            padding: 0 21px;
+        }
+        .custom-btn {
+            width: 130px;
+            height: 40px;
+            color: #fff;
+            border-radius: 5px;
+            padding: 10px 25px;
+            font-family: 'Lato', sans-serif;
+            font-weight: 500;
+            background: transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            display: inline-block;
+            box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5), 7px 7px 20px 0px rgba(0, 0, 0, 0.1),
+                4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+            outline: none;
+            margin-left: 44px;
+        }
+        .btn-12 {
+            position: relative;
+            right: 20px;
+            bottom: 20px;
+            border: none;
+            box-shadow: none;
+            width: 130px;
+            height: 40px;
+            line-height: 42px;
+            -webkit-perspective: 230px;
+            perspective: 230px;
+        }
+        .btn-12 span {
+            background: rgb(0, 172, 238);
+            background: linear-gradient(0deg, rgba(0, 172, 238, 1) 0%, rgba(2, 126, 251, 1) 100%);
+            display: block;
+            position: absolute;
+            width: 130px;
+            height: 40px;
+            box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5), 7px 7px 20px 0px rgba(0, 0, 0, 0.1),
+                4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            margin: 0;
+            text-align: center;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            -webkit-transition: all 0.3s;
+            transition: all 0.3s;
+        }
+        .btn-12 span:nth-child(1) {
+            box-shadow: -7px -7px 20px 0px #fff9, -4px -4px 5px 0px #fff9, 7px 7px 20px 0px #0002, 4px 4px 5px 0px #0001;
+            -webkit-transform: rotateX(90deg);
+            -moz-transform: rotateX(90deg);
+            transform: rotateX(90deg);
+            -webkit-transform-origin: 50% 50% -20px;
+            -moz-transform-origin: 50% 50% -20px;
+            transform-origin: 50% 50% -20px;
+        }
+        .btn-12 span:nth-child(2) {
+            -webkit-transform: rotateX(0deg);
+            -moz-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+            -webkit-transform-origin: 50% 50% -20px;
+            -moz-transform-origin: 50% 50% -20px;
+            transform-origin: 50% 50% -20px;
+        }
+        .btn-12:hover span:nth-child(1) {
+            box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5), 7px 7px 20px 0px rgba(0, 0, 0, 0.1),
+                4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+            -webkit-transform: rotateX(0deg);
+            -moz-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+        }
+        .btn-12:hover span:nth-child(2) {
+            box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5), 7px 7px 20px 0px rgba(0, 0, 0, 0.1),
+                4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+            color: transparent;
+            -webkit-transform: rotateX(-90deg);
+            -moz-transform: rotateX(-90deg);
+            transform: rotateX(-90deg);
+        }
+    }
+    .translate-codelf-input-box {
+        margin-top: 30px;
+        display: flex;
+        .translate-codelf-input {
+            background-color: #fff;
+            border: 1px solid #dedede;
+            position: relative;
+            position: relative;
+            width: 49.999999%;
+            background-color: #fff;
+            min-height: 84px;
+            padding: 10px 10px 43px;
+            position: relative;
+            transition: 0.3s;
+            &:hover {
+                border: 1px solid #4395ff;
+            }
+            .textarea-box {
+                height: 70px;
+                border: none;
+                color: #333;
+                outline: none;
+                overflow: hidden;
+                resize: none;
+                z-index: 3;
+                font-size: 26px;
+            }
+        }
+        .translate-codelf-output {
+            position: relative;
+            width: 49.999999%;
+            background-color: #f0f0f0;
+            min-height: 112px;
+            padding: 14px;
+            box-sizing: border-box;
+            span {
+                color: #333;
+                font-size: 26px;
+                line-height: 30px;
+            }
+        }
+    }
 }
