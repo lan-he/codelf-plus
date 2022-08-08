@@ -1,0 +1,29 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 3570953 */
+  src: url('iconfont.woff2?t=1659765090306') format('woff2');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-close:before {
+  content: "\e668";
+}
+
+.icon-favorite:before {
+  content: "\e66f";
+}
+
+.icon-setting:before {
+  content: "\e67d";
+}
+
+.icon-qiehuan:before {
+  content: "\e664";
+}
+

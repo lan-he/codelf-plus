@@ -1,48 +1,63 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import md5 from 'js-md5'
 import { vipTranslate } from '@/api/index.js'
 import './home.less'
+let timer = null
 function Home() {
-    const renderRef = useRef(true)
-    const [translation, setTranslation] = useState('你好世界')
-    const [answer, setAnswer] = useState('')
-
+    const [translation, setTranslation] = useState('') // 输入内容
+    const [cssAnswer, setCssAnswer] = useState('') // css类名答案
+    const [reversal, setReversal] = useState(false)
     useEffect(() => {
-        if (renderRef.current) {
-            renderRef.current = false
-            return
-        }
         // requestTranslationApi()
     }, [])
     const handleChange = (e) => {
-        setTranslation(e.target.value)
+        let values = e.target.value
+        setTranslation(values)
+        console.log(values.match(/\n|\r/g), 'n')
+        clearTimeout(timer)
+        timer = setTimeout(() => {
+            requestTranslationApi(values)
+        }, 700)
     }
-    const requestTranslationApi = async () => {
+    const requestTranslationApi = async (values = '') => {
+        // 查询翻译接口
         const randomThis = random(1000, 100000)
         const appid = '20220730001287605'
         const miyao = 'XLAWBA5mBQaKdcFFZP9D'
         const res = await vipTranslate({
-            q: translation,
+            q: values,
             from: 'auto',
             to: 'en',
             appid: appid,
             salt: randomThis,
-            sign: md5(appid + translation + randomThis + miyao),
+            sign: md5(appid + values + randomThis + miyao),
+            tts: 1,
         })
         if (res.data.trans_result) {
-            setAnswer(res.data.trans_result[0].dst)
+            let dstData = res.data.trans_result[0].dst
+            setCssAnswer(dstData.toLowerCase().replace(/\s+/g, '-').replace(/,/g, ''))
         }
     }
-    function random(min, max) {
+    const random = (min, max) => {
         return Math.round(Math.random() * (max - min)) + min
     }
     return (
         <div className="translate-codelf-box">
             <div className="translation-operation-box">
                 <div className="select-inner">中文</div>
-                <i className="select-inner-icon">a</i>
+                <i
+                    className={`iconfont icon-qiehuan ${reversal ? 'mirror-reversal' : ''}`}
+                    onClick={() => {
+                        setReversal(!reversal)
+                    }}
+                ></i>
                 <div className="select-inner">英语</div>
-                <button class="custom-btn btn-12" onClick={requestTranslationApi}>
+                <button
+                    className="custom-btn btn-12"
+                    onClick={() => {
+                        requestTranslationApi(translation)
+                    }}
+                >
                     <span>Click</span>
                     <span>翻译</span>
                 </button>
@@ -52,7 +67,7 @@ function Home() {
                     <textarea className="textarea-box" value={translation} onChange={handleChange} />
                 </div>
                 <div className="translate-codelf-output">
-                    <span>{answer}</span>
+                    <span>{cssAnswer}</span>
                 </div>
             </div>
         </div>
