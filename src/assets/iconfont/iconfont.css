@@ -1,6 +1,6 @@
 @font-face {
   font-family: "iconfont"; /* Project id 3570953 */
-  src: url('iconfont.woff2?t=1659765090306') format('woff2');
+  src: url('iconfont.woff2?t=1660032604393') format('woff2');
 }
 
 .iconfont {
@@ -9,6 +9,14 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-github:before {
+  content: "\e673";
+}
+
+.icon-food-taco:before {
+  content: "\e603";
 }
 
 .icon-close:before {
